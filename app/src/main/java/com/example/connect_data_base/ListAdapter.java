@@ -13,12 +13,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.PersonViewHolder> {
     private List<Person> people;
     private LayoutInflater inflater;
     private Context context;
+    private List<Person> filteredList;
 
     public ListAdapter(List<Person> people, Context context) {
         this.inflater = LayoutInflater.from(context);
@@ -56,7 +58,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.PersonViewHold
             dob = itemView.findViewById(R.id.personDob);
 
         }
-
+        public void setFilteredList(List<Person> filteredList){
+            
+        }
         void bindData(final Person person) {
             personImage.setImageBitmap(getUserImage(person.getImage()));
             name.setText(person.getName());
@@ -65,7 +69,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.PersonViewHold
             address.setText(person.getAddress());
         }
     }
-
+    public void setFilteredList(List<Person> filteredList) {
+        this.people.clear();
+        this.people.addAll(filteredList);
+        notifyDataSetChanged();
+    }
     private Bitmap getUserImage(String image) {
         byte[] bytes = Base64.decode(image, Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);

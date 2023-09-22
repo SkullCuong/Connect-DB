@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 
 public abstract class PersonDB extends RoomDatabase {
 
-    private static final String Database_name = "person.db";
+    private static final String Database_name = "person_v1.db";
     private static PersonDB instance;
 
     public static synchronized PersonDB getInstance(Context context){
