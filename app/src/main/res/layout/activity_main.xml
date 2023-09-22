@@ -52,7 +52,7 @@
             android:layout_marginTop="@dimen/_20sdp"
             android:background="@drawable/background_image"
             android:hint="Name"
-            android:imeOptions="actionNext"
+            android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:inputType="text"
             android:paddingStart="@dimen/_15sdp"
@@ -66,13 +66,14 @@
             android:layout_marginTop="@dimen/_16sdp"
             android:background="@drawable/background_image"
             android:hint="Email"
-            android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:inputType="textEmailAddress"
             android:paddingStart="@dimen/_15sdp"
             android:paddingEnd="@dimen/_16sdp"
             android:textColor="@color/primary_text"
-            android:textSize="@dimen/_13ssp" />
+            android:textSize="@dimen/_13ssp"
+            android:imeOptions="actionDone"
+            />
         <EditText
             android:id="@+id/inputDateOfBirth"
             android:layout_width="match_parent"
@@ -80,13 +81,15 @@
             android:layout_marginTop="@dimen/_16sdp"
             android:background="@drawable/background_image"
             android:hint="MM / DD / YYYY"
-            android:inputType="datetime"
-            android:imeOptions="actionDone"
+            android:inputType="none"
             android:importantForAutofill="no"
             android:paddingStart="@dimen/_15sdp"
             android:paddingEnd="@dimen/_16sdp"
             android:textColor="@color/primary_text"
-            android:textSize="@dimen/_13ssp" />
+            android:textSize="@dimen/_13ssp"
+            android:focusable="false"
+            android:imeOptions="actionDone"
+            />
         <EditText
             android:id="@+id/inputAddress"
             android:layout_width="match_parent"
@@ -95,12 +98,13 @@
             android:background="@drawable/background_image"
             android:hint="Address"
             android:inputType="text"
-            android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:paddingStart="@dimen/_15sdp"
             android:paddingEnd="@dimen/_16sdp"
             android:textColor="@color/primary_text"
-            android:textSize="@dimen/_13ssp" />
+            android:textSize="@dimen/_13ssp"
+            android:imeOptions="actionDone"
+            />
 
         <FrameLayout
             android:layout_width="match_parent"
